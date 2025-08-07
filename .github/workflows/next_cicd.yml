@@ -18,6 +18,7 @@ jobs:
           script: |
            cd ${{secrets.APP_DIR}}
            git pull
+           npm --version
            npm install
            npm run build
            pm2 restart "test_next"
