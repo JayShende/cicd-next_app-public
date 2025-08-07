@@ -6,6 +6,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    
       - name: Deploy via SSH
         uses: appleboy/ssh-action@v1
         with:
@@ -14,8 +15,7 @@ jobs:
           key: ${{secrets.EC2_SECRET_KEY}}
           script: |
            cd ${{secrets.APP_DIR}}
-           git fetch --all
-           git reset --hard origin/main
+           git pull
            npm install
            npm run build
            pm2 restart "test_next"
