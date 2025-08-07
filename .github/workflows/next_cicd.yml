@@ -7,4 +7,4 @@ jobs:
 
     steps:
       -name: Sample Test runs
-      -run : echo "Raam Raam Bhai"
+      run : echo "Raam Raam Bhai"
